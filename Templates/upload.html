@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+	<style>
+		#princ
+		{
+			width: 800px; 
+            padding: 25px; 
+            border: 5px solid navy;
+		}
+
+	</style>
+    
+    <div id = "princ">
+    <h2>Upload</h2>
+    	<form method = "post" enctype="multipart/form-data" >
+    		{% csrf_token %}
+    		<input type="file" name="document">
+    		<button type="submit">Upload File</button>
+    		
+    	</form>
+    </div>
+
+{% endblock %}

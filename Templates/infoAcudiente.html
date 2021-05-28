@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <br>
+    <div>
+        <h1 marginwidth="2000">Hola, {{ acudiente.nombre }}</h1>
+    </div>
+    <br>
+    {% csrf_token %}
+    <table class="table table-striped table-hover">
+        <tbody>
+        <tr>
+            <th>email</th>
+            <td>{{ acudiente.email }}</td>
+        </tr>
+        <tr>
+            <th>estudiante</th>
+            <td>{{ acudiente.estudiante }}</td>
+        </tr>
+        <tr>
+            <th>telefono</th>
+            <td>{{ acudiente.telefono }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    {{ form|crispy }}
+
+    </form>
+{% endblock %}

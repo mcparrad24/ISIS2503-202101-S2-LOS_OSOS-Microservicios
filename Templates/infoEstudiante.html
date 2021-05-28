@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <style type="text/css">
+        h2{
+            width: 800px; 
+            padding: 25px; 
+            border: 5px solid navy;
+
+          }
+
+          h1{
+            width: 1300px; 
+            padding: 25px;
+            border: 5px solid black;
+          }
+
+          
+          #x{
+            width: 800px; 
+            padding: 10px; 
+            border: 5px solid navy;
+
+          }
+    </style>
+
+    <br>
+        <h1> 
+            GNOSOFT Academico®
+        </h1>
+    </br>
+    <title> Gnosoft Academico</title>
+    <div>
+        <h2 marginwidth="2000">
+            Bienvenido, <b>{{ estudiante.nombre }}
+        </b></h2>
+    </div>
+
+    <div id = "x">
+        <h3><b>Manejador de tareas<b></h3>
+        <h5>Haga click <a href="{% url 'upload_redirect' %}">aquí</a> para subir un archivo.</h5>
+    </div>
+    {% csrf_token %}
+
+
+{% endblock %}

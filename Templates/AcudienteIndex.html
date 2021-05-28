@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <br>
+    <h1>Registro de acudientes</h1>
+    <br>
+    <form action="{% url 'guardar' %}" method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                La información ingresada no es válida
+            </div>
+
+        {% else %}
+            {% if mensaje %}
+                <div class="alert alert-success" role="alert">
+                    Acudiente registrado exitosamente
+                </div>
+            {% endif %}
+        {% endif %}
+        {{ form|crispy }}
+        <br>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+{% endblock %}
