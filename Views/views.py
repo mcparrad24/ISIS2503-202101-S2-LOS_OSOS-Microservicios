@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 
-from Acudiente.forms import FormularioAcudiente
+# from Acudiente.forms import FormularioAcudiente
 
 
 def home(self):

@@ -1,5 +1,7 @@
 from django.db import models
-from Usuarios.Estudiante.models import Estudiante
+
+from Estudiante.models import Estudiante
+
 
 class Acudiente(models.Model):
     nombre = models.CharField(max_length=50)

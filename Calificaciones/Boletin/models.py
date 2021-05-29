@@ -1,5 +1,5 @@
 from django.db import models
-from Usuarios.Estudiante.models import Estudiante
+from UsuariosM.Estudiante.models import Estudiante
 
 class Boletin(models.Model):
     periodo = models.CharField(max_length=50)

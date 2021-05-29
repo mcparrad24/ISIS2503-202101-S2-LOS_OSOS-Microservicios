@@ -6,7 +6,6 @@ from Acudiente.forms import FormularioAcudiente
 from Acudiente.login import FormularioLogin
 from Acudiente.models import Acudiente
 
-
 class FormularioAcudienteView(HttpRequest):
 
     def index(request):

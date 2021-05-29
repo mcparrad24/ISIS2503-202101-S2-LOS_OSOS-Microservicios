@@ -2,8 +2,8 @@ from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
-from Usuarios.Estudiante.login import FormularioLogin
-from Usuarios.Estudiante.models import Estudiante
+from Estudiante.login import FormularioLogin
+from Estudiante.models import Estudiante
 
 from django.core.files.storage import FileSystemStorage
 #from .forms import ModelFormWithFileField

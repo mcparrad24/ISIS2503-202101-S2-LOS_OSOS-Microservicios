@@ -1,6 +1,6 @@
 from django.db import models
 #from Curso.models import Curso
-from Usuarios.Estudiante.models import Estudiante
+from UsuariosM.Estudiante.models import Estudiante
 
 class Asignacion(models.Model):
     nombre = models.CharField(max_length=50)

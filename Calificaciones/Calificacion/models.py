@@ -1,6 +1,6 @@
 from django.db import models
 from Calificaciones.Asignacion.models import Asignacion
-from Usuarios.Estudiante.models import Estudiante
+from UsuariosM.Estudiante.models import Estudiante
 
 class Calificacion(models.Model):
     retroalimentacion = models.CharField(max_length=250)
