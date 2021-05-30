@@ -1,3 +1,8 @@
+from Factura.models import Factura
 from django.db import models
 
-# Create your models here.
+class Matricula(models.Model):
+    id = models.IntegerField(primary_key=True)
+    periodo = models.CharField(max_length=255)
+    factura = models.OneToOneField(Factura, on_delete=models.CASCADE)
+    estudianteEmail = models.CharField(max_length=255, null = False, default = None)

@@ -1,3 +1,7 @@
 from django.db import models
+from Pago.models import Pago
 
-# Create your models here.
+class Factura(models.Model):
+    id = models.IntegerField(primary_key=True)
+    info = models.CharField(max_length=255)
+    pago = models.OneToOneField(Pago, on_delete=models.CASCADE)
