@@ -1,6 +1,9 @@
 from django.db import models
+from Pago.models import Pago
 
 class Factura(models.Model):
-    info = models.CharField(max_length=250)
+    id = models.IntegerField(primary_key=True)
+    info = models.CharField(max_length=255)
+    pago = models.OneToOneField(Pago, on_delete=models.CASCADE)
     def __str__(self):
-        return '{}'.format(self.nombre)
+        return '{}'.format(self.id)

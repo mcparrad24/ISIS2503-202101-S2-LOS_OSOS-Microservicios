@@ -1,10 +1,17 @@
-# import objects as objects
+# import objects as objects
 from django.http import HttpRequest
-from django.shortcuts import render
 
 from Acudiente.forms import FormularioAcudiente
 from Acudiente.login import FormularioLogin
 from Acudiente.models import Acudiente
+
+from .models import Variable
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.http import HttpResponse
+from django.urls import reverse
+from django.http import JsonResponse
+import json
 
 class FormularioAcudienteView(HttpRequest):
 
@@ -41,3 +48,17 @@ class FormularioAcudienteView(HttpRequest):
     def info(request, a):
         acudiente=Acudiente.objects.get(email=a)
         return render(request, "infoAcudiente.html", {"acudiente": acudiente})
+
+def AcudienteList(request):
+    queryset = Acudiente.objects.all()
+    context = list(queryset.values('nombre', 'estudiante', 'telefono', 'email', 'password'))
+    return JsonResponse(context, safe=False)
+
+def AcudienteCreate(request):
+    if request.method == 'POST':
+        data = request.body.decode('utf-8')
+        data_json = json.loads(data)
+        acudiente = Acudiente()
+        acudiente.email = data_json["email"]
+        acudiente.save()
+        return HttpResponse("successfully created variable")
