@@ -1,15 +1,11 @@
 from django.db import models
-# from Colegio.models import Colegio
-# from Grupo.models import Grupo
-# from Grado.models import Grado
+from Colegio.models import Colegio
 
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=50)
-    colegio = models.CharField(max_length=50, null=True)
+    colegio = models.ForeignKey(Colegio, on_delete=models.CASCADE)
     codigo = models.CharField(max_length=50, null=True)
     email = models.CharField(max_length=50, primary_key=True)
     password = models.CharField(max_length=10, null=True)
-    grupo = models.CharField(max_length=50, null=True)
-    grado = models.CharField(max_length=50, null=True)
     def __str__(self):
-        return '{}'.format(self.nombre)
+        return '{}'.format(self.email)
