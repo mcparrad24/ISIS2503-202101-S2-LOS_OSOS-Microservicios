@@ -1,4 +1,4 @@
-# import objects as objects
+# import objects as objects
 from django.http import HttpRequest
 from django.shortcuts import render
 

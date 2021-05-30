@@ -1,3 +1,4 @@
+
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
@@ -49,14 +50,3 @@ def upload(request):
 
 def upload_redirect(request):
     return redirect('upload.html')
-
-
-
-
-
-
-
-
-
-
-

@@ -4,10 +4,10 @@ from django.db import models
 # from Grado.models import Grado
 
 class Estudiante(models.Model):
-    nombre = models.CharField(max_length=50, primary_key=True)
+    nombre = models.CharField(max_length=50)
     colegio = models.CharField(max_length=50, null=True)
     codigo = models.CharField(max_length=50, null=True)
-    email = models.CharField(max_length=50, unique=True)
+    email = models.CharField(max_length=50, primary_key=True)
     password = models.CharField(max_length=10, null=True)
     grupo = models.CharField(max_length=50, null=True)
     grado = models.CharField(max_length=50, null=True)
