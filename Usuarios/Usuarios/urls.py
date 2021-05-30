@@ -18,11 +18,20 @@ from django.urls import path
 from Acudiente.views import FormularioAcudienteView
 from Views import views
 
+from django.contrib import admin
+from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('log/',FormularioAcudienteView.log, name='log'),
     path('login/',FormularioAcudienteView.login, name='login'),
     path('est/(<a>)',FormularioAcudienteView.info, name='infoEstudiante'),
-
+    path('', include('Acudiente.urls')),
+    path('', include('Estudiante.urls'))
 ]
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

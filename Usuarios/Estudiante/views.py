@@ -11,6 +11,14 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 
+from .models import Variable
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.http import HttpResponse
+from django.urls import reverse
+from django.http import JsonResponse
+import json
+
 
 
 
@@ -50,3 +58,23 @@ def upload(request):
 
 def upload_redirect(request):
     return redirect('upload.html')
+
+def EstudianteList(request):
+    queryset = Estudiante.objects.all()
+    context = list(queryset.values('nombre', 'colegio', 'grupo', 'grado', 'codigo', 'email', 'password'))
+    return JsonResponse(context, safe=False)
+
+def EstudianteCreate(request):
+    if request.method == 'POST':
+        data = request.body.decode('utf-8')
+        data_json = json.loads(data)
+        estudiante = Estudiante()
+        estudiante.nombre = data_json["nombre"]
+        estudiante.colegio = data_json["colegio"]
+        estudiante.grupo = data_json["grupo"]
+        estudiante.grado = data_json["grado"]
+        estudiante.codigo = data_json["codigo"]
+        estudiante.email = data_json["email"]
+        estudiante.password = data_json["password"]
+        estudiante.save()
+        return HttpResponse("successfully created variable")
