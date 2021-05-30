@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'Colegio',
     'Curso',
     'Docente',
+    'Grupo',
+    'Grado',
     'crispy_forms',
 ]
 
