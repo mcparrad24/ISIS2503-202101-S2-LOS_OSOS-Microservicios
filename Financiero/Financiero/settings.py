@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'Financiero.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'financiero_microservicios',
-        'USER': 'osos',
-        'PASSWORD':'qwert2021',
-        'HOST': 'localhost',
-        'PORT':'',
+        'NAME': 'financiero_db',
+        'USER': 'financiero_user',
+        'PASSWORD':'isis2503',
+        'HOST': '54.88.20.207',
+        'PORT':'5432',
     }
 }
 
@@ -126,6 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-PATH_EST = "http://0.0.0.0:8000/estudiantes"
+PATH_EST = "http://100.26.230.1:8000/estudiantes"
 
-PATH_EST = "http://0.0.0.0:8000/acudientes"
+PATH_ACU = "http://100.26.230.7:8000/acudientes"
