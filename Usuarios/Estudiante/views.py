@@ -11,7 +11,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 
-from .models import Variable
+from .models import Estudiante
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse

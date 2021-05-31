@@ -5,7 +5,7 @@ from Acudiente.forms import FormularioAcudiente
 from Acudiente.login import FormularioLogin
 from Acudiente.models import Acudiente
 
-from .models import Variable
+from .models import Acudiente
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
